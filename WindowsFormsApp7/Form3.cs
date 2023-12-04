@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,44 @@ namespace WindowsFormsApp7
             comboBox2.SelectedIndex = 0;
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            //dataGridView1.DataSource = Sbind;
+            DataTable dt = Autho();
+            Sbind.DataSource = dt;
+            dataGridView1.DataSource = Sbind;
             //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        static DataTable Autho()
+        {
+            DataTable dt = new DataTable();
+            var constr = new SqlConnectionStringBuilder()
+            {
+                DataSource = "localhost,1433",
+                InitialCatalog = "RTA",
+                IntegratedSecurity = true,
+                TrustServerCertificate = true,
+            };
+
+            using (var con = new SqlConnection(constr.ConnectionString))
+            {
+                string cmdstr = "select Surname, Name, Patronymic, CONVERT(varchar(10), Date_of_birth, 104) AS Date_of_birth, Address, Phone_number, Driver_licence, Category,  CONVERT(varchar(10), Date_of_issue, 104) AS Date_of_issue from Driver where Driver_licence is not null";
+                try
+                {
+                    using (var cmd = new SqlCommand(cmdstr, con))
+                    {
+                        con.Open();
+                        SqlDataAdapter dataAdp = new SqlDataAdapter(cmd);
+                        using (var rdr = cmd.ExecuteReader())
+                        {
+                            dt.Load(rdr);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка: " + ex);
+                }
+            }
+            return dt;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
