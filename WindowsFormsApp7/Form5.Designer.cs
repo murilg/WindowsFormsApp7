@@ -37,24 +37,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rTADataSet = new WindowsFormsApp7.RTADataSet();
             this.rTADataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicleTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.VehicleTableAdapter();
-            this.makeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberplateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearofmanufactureDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrationdateofissueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -89,6 +81,7 @@
             // 
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Items.AddRange(new object[] {
+            "По всем полям",
             "Марка",
             "Модель",
             "Госномер",
@@ -155,24 +148,18 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.makeDataGridViewTextBoxColumn,
-            this.modelDataGridViewTextBoxColumn,
-            this.numberplateDataGridViewTextBoxColumn,
-            this.colorDataGridViewTextBoxColumn,
-            this.yearofmanufactureDataGridViewTextBoxColumn,
-            this.vINDataGridViewTextBoxColumn,
-            this.registrationDataGridViewTextBoxColumn,
-            this.registrationdateofissueDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vehicleBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 20);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(776, 283);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.rTADataSet;
             // 
             // rTADataSet
             // 
@@ -184,70 +171,9 @@
             this.rTADataSetBindingSource.DataSource = this.rTADataSet;
             this.rTADataSetBindingSource.Position = 0;
             // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.rTADataSet;
-            // 
             // vehicleTableAdapter
             // 
             this.vehicleTableAdapter.ClearBeforeFill = true;
-            // 
-            // makeDataGridViewTextBoxColumn
-            // 
-            this.makeDataGridViewTextBoxColumn.DataPropertyName = "Make";
-            this.makeDataGridViewTextBoxColumn.HeaderText = "Марка";
-            this.makeDataGridViewTextBoxColumn.Name = "makeDataGridViewTextBoxColumn";
-            this.makeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Модель";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numberplateDataGridViewTextBoxColumn
-            // 
-            this.numberplateDataGridViewTextBoxColumn.DataPropertyName = "Number_plate";
-            this.numberplateDataGridViewTextBoxColumn.HeaderText = "Госномер";
-            this.numberplateDataGridViewTextBoxColumn.Name = "numberplateDataGridViewTextBoxColumn";
-            this.numberplateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // colorDataGridViewTextBoxColumn
-            // 
-            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
-            this.colorDataGridViewTextBoxColumn.HeaderText = "Цвет";
-            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
-            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // yearofmanufactureDataGridViewTextBoxColumn
-            // 
-            this.yearofmanufactureDataGridViewTextBoxColumn.DataPropertyName = "Year_of_manufacture";
-            this.yearofmanufactureDataGridViewTextBoxColumn.HeaderText = "Год производства";
-            this.yearofmanufactureDataGridViewTextBoxColumn.Name = "yearofmanufactureDataGridViewTextBoxColumn";
-            this.yearofmanufactureDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vINDataGridViewTextBoxColumn
-            // 
-            this.vINDataGridViewTextBoxColumn.DataPropertyName = "VIN";
-            this.vINDataGridViewTextBoxColumn.HeaderText = "VIN";
-            this.vINDataGridViewTextBoxColumn.Name = "vINDataGridViewTextBoxColumn";
-            this.vINDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // registrationDataGridViewTextBoxColumn
-            // 
-            this.registrationDataGridViewTextBoxColumn.DataPropertyName = "Registration";
-            this.registrationDataGridViewTextBoxColumn.HeaderText = "СТС";
-            this.registrationDataGridViewTextBoxColumn.Name = "registrationDataGridViewTextBoxColumn";
-            this.registrationDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // registrationdateofissueDataGridViewTextBoxColumn
-            // 
-            this.registrationdateofissueDataGridViewTextBoxColumn.DataPropertyName = "Registration_date_of_issue";
-            this.registrationdateofissueDataGridViewTextBoxColumn.HeaderText = "Дата выдачи СТС";
-            this.registrationdateofissueDataGridViewTextBoxColumn.Name = "registrationdateofissueDataGridViewTextBoxColumn";
-            this.registrationdateofissueDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form5
             // 
@@ -266,9 +192,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -287,13 +213,5 @@
         private RTADataSet rTADataSet;
         private System.Windows.Forms.BindingSource vehicleBindingSource;
         private RTADataSetTableAdapters.VehicleTableAdapter vehicleTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn makeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numberplateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yearofmanufactureDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registrationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registrationdateofissueDataGridViewTextBoxColumn;
     }
 }

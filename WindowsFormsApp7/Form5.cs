@@ -30,6 +30,22 @@ namespace WindowsFormsApp7
             DataTable dt = Autho();
             Sbind.DataSource = dt;
             dataGridView1.DataSource = Sbind;
+            {
+                dataGridView1.Columns["Make"].HeaderText = "Марка";
+                dataGridView1.Columns["Model"].HeaderText = "Модель";
+                dataGridView1.Columns["Number_plate"].HeaderText = "Госномер";
+                dataGridView1.Columns["Color"].HeaderText = "Цвет";
+                dataGridView1.Columns["Year_of_manufacture"].HeaderText = "Год производства";
+                dataGridView1.Columns["VIN"].HeaderText = "VIN";
+                dataGridView1.Columns["Registration"].HeaderText = "СТС";
+                dataGridView1.Columns["Registration_date_of_issue"].HeaderText = "Дата выдачи СТС";
+                dataGridView1.Columns["Surname"].HeaderText = "Фамилия";
+                dataGridView1.Columns["Name"].HeaderText = "Имя";
+                dataGridView1.Columns["Patronymic"].HeaderText = "Отчество";
+                dataGridView1.Columns["Date_of_birth"].HeaderText = "Дата рождения";
+                dataGridView1.Columns["Address"].HeaderText = "Адрес";
+                dataGridView1.Columns["Phone_number"].HeaderText = "Телефон";
+            }
         }
 
         static DataTable Autho()
