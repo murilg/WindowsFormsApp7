@@ -74,12 +74,19 @@
             this.categoryDataGridViewTextBoxColumn,
             this.dateofissueDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.driverBindingSource;
+<<<<<<< HEAD
             this.dataGridView1.Location = new System.Drawing.Point(16, 15);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1035, 368);
+=======
+            this.dataGridView1.Location = new System.Drawing.Point(12, 28);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(776, 283);
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             this.dataGridView1.TabIndex = 0;
             // 
             // surnameDataGridViewTextBoxColumn
@@ -89,7 +96,11 @@
             this.surnameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.surnameDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.surnameDataGridViewTextBoxColumn.Width = 81;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -98,7 +109,11 @@
             this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.nameDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.nameDataGridViewTextBoxColumn.Width = 82;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // patronymicDataGridViewTextBoxColumn
             // 
@@ -107,7 +122,11 @@
             this.patronymicDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.patronymicDataGridViewTextBoxColumn.Name = "patronymicDataGridViewTextBoxColumn";
             this.patronymicDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.patronymicDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.patronymicDataGridViewTextBoxColumn.Width = 81;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // dateofbirthDataGridViewTextBoxColumn
             // 
@@ -116,7 +135,11 @@
             this.dateofbirthDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateofbirthDataGridViewTextBoxColumn.Name = "dateofbirthDataGridViewTextBoxColumn";
             this.dateofbirthDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.dateofbirthDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.dateofbirthDataGridViewTextBoxColumn.Width = 82;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // addressDataGridViewTextBoxColumn
             // 
@@ -125,7 +148,11 @@
             this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
             this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.addressDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.addressDataGridViewTextBoxColumn.Width = 81;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // phonenumberDataGridViewTextBoxColumn
             // 
@@ -134,7 +161,11 @@
             this.phonenumberDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.phonenumberDataGridViewTextBoxColumn.Name = "phonenumberDataGridViewTextBoxColumn";
             this.phonenumberDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.phonenumberDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.phonenumberDataGridViewTextBoxColumn.Width = 82;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // driverlicenceDataGridViewTextBoxColumn
             // 
@@ -143,7 +174,11 @@
             this.driverlicenceDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.driverlicenceDataGridViewTextBoxColumn.Name = "driverlicenceDataGridViewTextBoxColumn";
             this.driverlicenceDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.driverlicenceDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.driverlicenceDataGridViewTextBoxColumn.Width = 81;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // categoryDataGridViewTextBoxColumn
             // 
@@ -152,7 +187,11 @@
             this.categoryDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             this.categoryDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.categoryDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.categoryDataGridViewTextBoxColumn.Width = 82;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // dateofissueDataGridViewTextBoxColumn
             // 
@@ -161,7 +200,11 @@
             this.dateofissueDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dateofissueDataGridViewTextBoxColumn.Name = "dateofissueDataGridViewTextBoxColumn";
             this.dateofissueDataGridViewTextBoxColumn.ReadOnly = true;
+<<<<<<< HEAD
             this.dateofissueDataGridViewTextBoxColumn.Width = 125;
+=======
+            this.dateofissueDataGridViewTextBoxColumn.Width = 81;
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // driverBindingSource
             // 
@@ -196,6 +239,7 @@
             this.groupBox1.Text = "Фильтр";
             // 
             // textBox1
+<<<<<<< HEAD
             // 
             this.textBox1.Location = new System.Drawing.Point(8, 80);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
@@ -228,6 +272,14 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Поиск";
+=======
+            // 
+            this.textBox1.Location = new System.Drawing.Point(6, 65);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 20);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             // 
             // textBox2
             // 
@@ -235,6 +287,25 @@
             this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(249, 22);
+            this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Location = new System.Drawing.Point(301, 338);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(200, 100);
+            this.groupBox2.TabIndex = 2;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Поиск";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(6, 65);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(188, 20);
             this.textBox2.TabIndex = 2;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -265,14 +336,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1067, 554);
+=======
+            this.ClientSize = new System.Drawing.Size(808, 458);
+>>>>>>> Какие-то изменения Артура. Добавление фундамента отчёта.
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "Водители";
             this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).EndInit();

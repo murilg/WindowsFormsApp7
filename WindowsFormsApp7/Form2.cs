@@ -22,5 +22,17 @@ namespace WindowsFormsApp7
             var f3 = new Form3();
             f3.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var f3 = new Form4();
+            f3.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var f3 = new Form5();
+            f3.Show();
+        }
     }
 }

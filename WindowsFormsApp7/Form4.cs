@@ -11,26 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp7
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
         BindingSource Sbind = new BindingSource();
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
-        }
-
-        private void Form3_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "rTADataSet.Driver". При необходимости она может быть перемещена или удалена.
-            this.driverTableAdapter.Fill(this.rTADataSet.Driver);
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataTable dt = Autho();
-            Sbind.DataSource = dt;
-            dataGridView1.DataSource = Sbind;
-            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         static DataTable Autho()
@@ -46,7 +32,7 @@ namespace WindowsFormsApp7
 
             using (var con = new SqlConnection(constr.ConnectionString))
             {
-                string cmdstr = "select Surname, Name, Patronymic, CONVERT(varchar(10), Date_of_birth, 104) AS Date_of_birth, Address, Phone_number, Driver_licence, Category,  CONVERT(varchar(10), Date_of_issue, 104) AS Date_of_issue from Driver where Driver_licence is not null";
+                string cmdstr = "select distinct Surname, Name, Patronymic, CONVERT(varchar(10), Date_of_birth, 104) AS Date_of_birth, Address, Phone_number from Driver D join Vehicle V on D.Driver_id = V.Owner_id";
                 try
                 {
                     using (var cmd = new SqlCommand(cmdstr, con))
@@ -67,6 +53,29 @@ namespace WindowsFormsApp7
             return dt;
         }
 
+        private void Form4_Load(object sender, EventArgs e)
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "rTADataSet.Driver". При необходимости она может быть перемещена или удалена.
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataTable dt = Autho();
+            Sbind.DataSource = dt;
+            dataGridView1.DataSource = Sbind;
+
+        }
+        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+        }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (textBox1.Text == "")
@@ -84,9 +93,6 @@ namespace WindowsFormsApp7
                     case 3: pole = "Date_of_birth"; break;
                     case 4: pole = "Address"; break;
                     case 5: pole = "Phone_number"; break;
-                    case 6: pole = "Driver_licence"; break;
-                    case 7: pole = "Category"; break;
-                    case 8: pole = "Date_of_issue"; break;
                     default: pole = "Surname"; break;
                 }
 
@@ -147,9 +153,6 @@ namespace WindowsFormsApp7
                         case 4: columnID = 3; break;
                         case 5: columnID = 4; break;
                         case 6: columnID = 5; break;
-                        case 7: columnID = 6; break;
-                        case 8: columnID = 7; break;
-                        case 9: columnID = 8; break;
                         default: columnID = 0; break;
                     }
 
@@ -170,32 +173,9 @@ namespace WindowsFormsApp7
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            textBox2.Text = "";
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.driverTableAdapter.FillBy1(this.rTADataSet.Driver);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
         }
     }
 }
