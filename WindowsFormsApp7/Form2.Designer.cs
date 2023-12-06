@@ -76,6 +76,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "ДТП";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -85,6 +86,7 @@
             this.button5.TabIndex = 4;
             this.button5.Text = "Страховка";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -94,6 +96,7 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Свидетели";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -103,6 +106,7 @@
             this.button7.TabIndex = 6;
             this.button7.Text = "Сотрудники ГИБДД";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -112,6 +116,7 @@
             this.button8.TabIndex = 7;
             this.button8.Text = "Оформить ДТП";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // Form2
             // 

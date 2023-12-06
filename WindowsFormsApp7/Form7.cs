@@ -11,41 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp7
 {
-    public partial class Form5 : Form
+    public partial class Form7 : Form
     {
         BindingSource Sbind = new BindingSource();
-        public Form5()
+        public Form7()
         {
             InitializeComponent();
-        }
-
-        private void Form5_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "rTADataSet.Vehicle". При необходимости она может быть перемещена или удалена.
-            this.vehicleTableAdapter.Fill(this.rTADataSet.Vehicle);
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataTable dt = Autho();
-            Sbind.DataSource = dt;
-            dataGridView1.DataSource = Sbind;
-            {
-                dataGridView1.Columns["Make"].HeaderText = "Марка";
-                dataGridView1.Columns["Model"].HeaderText = "Модель";
-                dataGridView1.Columns["Number_plate"].HeaderText = "Госномер";
-                dataGridView1.Columns["Color"].HeaderText = "Цвет";
-                dataGridView1.Columns["Year_of_manufacture"].HeaderText = "Год производства";
-                dataGridView1.Columns["VIN"].HeaderText = "VIN";
-                dataGridView1.Columns["Registration"].HeaderText = "СТС";
-                dataGridView1.Columns["Registration_date_of_issue"].HeaderText = "Дата выдачи СТС";
-                dataGridView1.Columns["Surname"].HeaderText = "Фамилия";
-                dataGridView1.Columns["Name"].HeaderText = "Имя";
-                dataGridView1.Columns["Patronymic"].HeaderText = "Отчество";
-                dataGridView1.Columns["Date_of_birth"].HeaderText = "Дата рождения";
-                dataGridView1.Columns["Address"].HeaderText = "Адрес";
-                dataGridView1.Columns["Phone_number"].HeaderText = "Телефон";
-            }
         }
 
         static DataTable Autho()
@@ -61,15 +32,17 @@ namespace WindowsFormsApp7
 
             using (var con = new SqlConnection(constr.ConnectionString))
             {
-                string cmdstr = "select V.Make, V.Model, V.Number_plate, V.Color, convert(varchar(10), V.Year_of_manufacture, 104) AS Year_of_manufacture , V.VIN, V.Registration, convert(varchar(10), V.Registration_date_of_issue, 104) AS Registration_date_of_issue, D.Surname, D.Name, D.Patronymic, convert(varchar(10), D.Date_of_birth, 104) AS Date_of_birth, D.Address, D.Phone_number\r\nfrom Vehicle V\r\njoin Driver D on D.Driver_id = V.Owner_id";
+                string cmdstr = "select I.Insurance, I.Type, convert(varchar(10), I.Date_of_issue, 104) AS Date_of_issue, Ic.Name, V.Make, V.Model, V.Number_plate, V.VIN, D.Surname, D.Name AS N_Name, D.Patronymic, D.Driver_licence, D.Category, convert(varchar(10), D.Date_of_issue, 104) AS D_Date_of_issue from Insurance I join Driver_Insurance DI on I.Insurance_id = DI.Insurance_id join Insurance_company Ic on Ic.Insurance_company_id = I.Insurance_company_id join Vehicle V on V.Vehicle_id = I.Vehicle_id join Driver D on D.Driver_id = DI.Driver_id";
                 try
                 {
                     using (var cmd = new SqlCommand(cmdstr, con))
                     {
+
                         con.Open();
                         SqlDataAdapter dataAdp = new SqlDataAdapter(cmd);
                         using (var rdr = cmd.ExecuteReader())
                         {
+
                             dt.Load(rdr);
                         }
                     }
@@ -80,6 +53,33 @@ namespace WindowsFormsApp7
                 }
             }
             return dt;
+        }
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataTable dt = Autho();
+            Sbind.DataSource = dt;
+            dataGridView1.DataSource = Sbind;
+            {
+                dataGridView1.Columns["Insurance"].HeaderText = "Номер страховки";
+                dataGridView1.Columns["Type"].HeaderText = "Тип";
+                dataGridView1.Columns["Date_of_issue"].HeaderText = "Дата начала страховки";
+                dataGridView1.Columns["Name"].HeaderText = "Название страховой компании";
+                dataGridView1.Columns["Make"].HeaderText = "Марка";
+                dataGridView1.Columns["Model"].HeaderText = "Модель";
+                dataGridView1.Columns["Number_plate"].HeaderText = "Госномер";
+                dataGridView1.Columns["VIN"].HeaderText = "VIN";
+                dataGridView1.Columns["Surname"].HeaderText = "Фамилия водителя";
+                dataGridView1.Columns["N_Name"].HeaderText = "Имя";
+                dataGridView1.Columns["Patronymic"].HeaderText = "Отчество";
+                dataGridView1.Columns["Driver_licence"].HeaderText = "ВУ";
+                dataGridView1.Columns["Category"].HeaderText = "Категория";
+                dataGridView1.Columns["D_Date_of_issue"].HeaderText = "Дата выдачи ВУ";
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,21 +103,21 @@ namespace WindowsFormsApp7
                 string pole = "";
                 switch (comboBox1.SelectedIndex)
                 {
-                    case 0: pole = "Make"; break;
-                    case 1: pole = "Model"; break;
-                    case 2: pole = "Number_plate"; break;
-                    case 3: pole = "Color"; break;
-                    case 4: pole = "Year_of_manufacture"; break;
-                    case 5: pole = "VIN"; break;
-                    case 6: pole = "Registration"; break;
-                    case 7: pole = "Registration_date_of_issue"; break;
+                    case 0: pole = "Insurance"; break;
+                    case 1: pole = "Type"; break;
+                    case 2: pole = "Date_of_issue"; break;
+                    case 3: pole = "Name"; break;
+                    case 4: pole = "Make"; break;
+                    case 5: pole = "Model"; break;
+                    case 6: pole = "Number_plate"; break;
+                    case 7: pole = "VIN"; break;
                     case 8: pole = "Surname"; break;
-                    case 9: pole = "Name"; break;
+                    case 9: pole = "N_Name"; break;
                     case 10: pole = "Patronymic"; break;
-                    case 11: pole = "Date_of_birth"; break;
-                    case 12: pole = "Address"; break;
-                    case 13: pole = "Phone_number"; break;
-                    default: pole = "Make"; break;
+                    case 11: pole = "Driver_licence"; break;
+                    case 12: pole = "Category"; break;
+                    case 13: pole = "D_Date_of_issue"; break;
+                    default: pole = "Surname"; break;
                 }
 
                 Sbind.Filter = pole + " like '" + textBox1.Text.ToString() + "%'";

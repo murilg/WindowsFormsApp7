@@ -11,41 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp7
 {
-    public partial class Form5 : Form
+    public partial class Form9 : Form
     {
         BindingSource Sbind = new BindingSource();
-        public Form5()
+        public Form9()
         {
             InitializeComponent();
-        }
-
-        private void Form5_Load(object sender, EventArgs e)
-        {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "rTADataSet.Vehicle". При необходимости она может быть перемещена или удалена.
-            this.vehicleTableAdapter.Fill(this.rTADataSet.Vehicle);
-            comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            DataTable dt = Autho();
-            Sbind.DataSource = dt;
-            dataGridView1.DataSource = Sbind;
-            {
-                dataGridView1.Columns["Make"].HeaderText = "Марка";
-                dataGridView1.Columns["Model"].HeaderText = "Модель";
-                dataGridView1.Columns["Number_plate"].HeaderText = "Госномер";
-                dataGridView1.Columns["Color"].HeaderText = "Цвет";
-                dataGridView1.Columns["Year_of_manufacture"].HeaderText = "Год производства";
-                dataGridView1.Columns["VIN"].HeaderText = "VIN";
-                dataGridView1.Columns["Registration"].HeaderText = "СТС";
-                dataGridView1.Columns["Registration_date_of_issue"].HeaderText = "Дата выдачи СТС";
-                dataGridView1.Columns["Surname"].HeaderText = "Фамилия";
-                dataGridView1.Columns["Name"].HeaderText = "Имя";
-                dataGridView1.Columns["Patronymic"].HeaderText = "Отчество";
-                dataGridView1.Columns["Date_of_birth"].HeaderText = "Дата рождения";
-                dataGridView1.Columns["Address"].HeaderText = "Адрес";
-                dataGridView1.Columns["Phone_number"].HeaderText = "Телефон";
-            }
         }
 
         static DataTable Autho()
@@ -61,15 +32,17 @@ namespace WindowsFormsApp7
 
             using (var con = new SqlConnection(constr.ConnectionString))
             {
-                string cmdstr = "select V.Make, V.Model, V.Number_plate, V.Color, convert(varchar(10), V.Year_of_manufacture, 104) AS Year_of_manufacture , V.VIN, V.Registration, convert(varchar(10), V.Registration_date_of_issue, 104) AS Registration_date_of_issue, D.Surname, D.Name, D.Patronymic, convert(varchar(10), D.Date_of_birth, 104) AS Date_of_birth, D.Address, D.Phone_number\r\nfrom Vehicle V\r\njoin Driver D on D.Driver_id = V.Owner_id";
+                string cmdstr = "select Surname, Name, Patronymic, Badge_number, Post, Special_rank, Division from GIBDD_officer";
                 try
                 {
                     using (var cmd = new SqlCommand(cmdstr, con))
                     {
+
                         con.Open();
                         SqlDataAdapter dataAdp = new SqlDataAdapter(cmd);
                         using (var rdr = cmd.ExecuteReader())
                         {
+
                             dt.Load(rdr);
                         }
                     }
@@ -103,21 +76,14 @@ namespace WindowsFormsApp7
                 string pole = "";
                 switch (comboBox1.SelectedIndex)
                 {
-                    case 0: pole = "Make"; break;
-                    case 1: pole = "Model"; break;
-                    case 2: pole = "Number_plate"; break;
-                    case 3: pole = "Color"; break;
-                    case 4: pole = "Year_of_manufacture"; break;
-                    case 5: pole = "VIN"; break;
-                    case 6: pole = "Registration"; break;
-                    case 7: pole = "Registration_date_of_issue"; break;
-                    case 8: pole = "Surname"; break;
-                    case 9: pole = "Name"; break;
-                    case 10: pole = "Patronymic"; break;
-                    case 11: pole = "Date_of_birth"; break;
-                    case 12: pole = "Address"; break;
-                    case 13: pole = "Phone_number"; break;
-                    default: pole = "Make"; break;
+                    case 0: pole = "Surname"; break;
+                    case 1: pole = "Name"; break;
+                    case 2: pole = "Patronymic"; break;
+                    case 3: pole = "Badge_number"; break;
+                    case 4: pole = "Post"; break;
+                    case 5: pole = "Special_rank"; break;
+                    case 6: pole = "Division"; break;
+                    default: pole = "Surname"; break;
                 }
 
                 Sbind.Filter = pole + " like '" + textBox1.Text.ToString() + "%'";
@@ -178,13 +144,6 @@ namespace WindowsFormsApp7
                         case 5: columnID = 4; break;
                         case 6: columnID = 5; break;
                         case 7: columnID = 6; break;
-                        case 8: columnID = 7; break;
-                        case 9: columnID = 8; break;
-                        case 10: columnID = 9; break;
-                        case 11: columnID = 10; break;
-                        case 12: columnID = 11; break;
-                        case 13: columnID = 12; break;
-                        case 14: columnID = 13; break;
                         default: columnID = 0; break;
                     }
 
@@ -208,6 +167,26 @@ namespace WindowsFormsApp7
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form9_Load(object sender, EventArgs e)
+        {
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            DataTable dt = Autho();
+            Sbind.DataSource = dt;
+            dataGridView1.DataSource = Sbind;
+            {
+                dataGridView1.Columns["Surname"].HeaderText = "Фамилия";
+                dataGridView1.Columns["Name"].HeaderText = "Имя";
+                dataGridView1.Columns["Patronymic"].HeaderText = "Отчество";
+                dataGridView1.Columns["Badge_number"].HeaderText = "Номер нагрудного знака";
+                dataGridView1.Columns["Post"].HeaderText = "Должность";
+                dataGridView1.Columns["Special_rank"].HeaderText = "Специальное звание";
+                dataGridView1.Columns["Division"].HeaderText = "Подразделение";
+            }
         }
     }
 }
