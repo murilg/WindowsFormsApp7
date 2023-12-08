@@ -66,24 +66,14 @@
             System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label12;
+            System.Windows.Forms.Label number_of_deadLabel1;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.number_of_deadTextBox = new System.Windows.Forms.TextBox();
-            this.rTABindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rTADataSet = new WindowsFormsApp7.RTADataSet();
             this.number_of_woundedTextBox = new System.Windows.Forms.TextBox();
             this.date_and_timeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.buildingTextBox = new System.Windows.Forms.TextBox();
             this.streetTextBox = new System.Windows.Forms.TextBox();
             this.cityTextBox = new System.Windows.Forms.TextBox();
-            this.rtaTableAdapter1 = new WindowsFormsApp7.RTADataSetTableAdapters.RTATableAdapter();
-            this.tableAdapterManager = new WindowsFormsApp7.RTADataSetTableAdapters.TableAdapterManager();
-            this.driverTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.DriverTableAdapter();
-            this.insuranceTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.InsuranceTableAdapter();
-            this.rTA_DriverTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.RTA_DriverTableAdapter();
-            this.tagTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.TagTableAdapter();
-            this.vehicleTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.VehicleTableAdapter();
-            this.witnessTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.WitnessTableAdapter();
             this.rTABindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -99,7 +89,6 @@
             this.rTABindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.phone_numberTextBox = new System.Windows.Forms.TextBox();
-            this.witnessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.date_of_birthDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.patronymicTextBox = new System.Windows.Forms.TextBox();
@@ -107,22 +96,15 @@
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.driver_licenceTextBox = new System.Windows.Forms.TextBox();
-            this.driversInDUIRtaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.the_driver_is_drunkCheckBox = new System.Windows.Forms.CheckBox();
-            this.rTA_DriverBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicle_damageTextBox = new System.Windows.Forms.TextBox();
-            this.rTA_DriverBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.insuranceTextBox = new System.Windows.Forms.TextBox();
             this.insuranceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.number_plateTextBox = new System.Windows.Forms.TextBox();
-            this.driversInDUIRtaTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.DriversInDUIRtaTableAdapter();
             this.nameComboBox = new System.Windows.Forms.ComboBox();
             this.is_the_vehicle_insuredCheckBox = new System.Windows.Forms.CheckBox();
             this.damage_to_other_propertyCheckBox = new System.Windows.Forms.CheckBox();
@@ -147,6 +129,24 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.number_of_deadTextBox = new System.Windows.Forms.TextBox();
+            this.tagBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rTADataSet = new WindowsFormsApp7.RTADataSet();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rTA_DriverBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.driverBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.driversInDUIRtaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.witnessBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rTABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rtaTableAdapter1 = new WindowsFormsApp7.RTADataSetTableAdapters.RTATableAdapter();
+            this.tableAdapterManager = new WindowsFormsApp7.RTADataSetTableAdapters.TableAdapterManager();
+            this.driverTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.DriverTableAdapter();
+            this.insuranceTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.InsuranceTableAdapter();
+            this.rTA_DriverTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.RTA_DriverTableAdapter();
+            this.tagTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.TagTableAdapter();
+            this.vehicleTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.VehicleTableAdapter();
+            this.witnessTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.WitnessTableAdapter();
+            this.driversInDUIRtaTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.DriversInDUIRtaTableAdapter();
             cityLabel = new System.Windows.Forms.Label();
             streetLabel = new System.Windows.Forms.Label();
             buildingLabel = new System.Windows.Forms.Label();
@@ -183,28 +183,28 @@
             label10 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
+            number_of_deadLabel1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rTABindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTABindingNavigator)).BeginInit();
             this.rTABindingNavigator.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.witnessBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driversInDUIRtaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceBindingSource)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversInDUIRtaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.witnessBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTABindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cityLabel
@@ -377,9 +377,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(number_of_deadLabel1);
+            this.groupBox1.Controls.Add(this.number_of_deadTextBox);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(number_of_deadLabel);
-            this.groupBox1.Controls.Add(this.number_of_deadTextBox);
             this.groupBox1.Controls.Add(number_of_woundedLabel);
             this.groupBox1.Controls.Add(this.number_of_woundedTextBox);
             this.groupBox1.Controls.Add(date_and_timeLabel);
@@ -392,7 +393,7 @@
             this.groupBox1.Controls.Add(this.cityTextBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 203);
+            this.groupBox1.Size = new System.Drawing.Size(373, 228);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ДТП";
@@ -404,24 +405,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
             this.dateTimePicker1.TabIndex = 7;
-            // 
-            // number_of_deadTextBox
-            // 
-            this.number_of_deadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTABindingSource, "Number_of_dead", true));
-            this.number_of_deadTextBox.Location = new System.Drawing.Point(119, 173);
-            this.number_of_deadTextBox.Name = "number_of_deadTextBox";
-            this.number_of_deadTextBox.Size = new System.Drawing.Size(100, 20);
-            this.number_of_deadTextBox.TabIndex = 11;
-            // 
-            // rTABindingSource
-            // 
-            this.rTABindingSource.DataMember = "RTA";
-            this.rTABindingSource.DataSource = this.rTADataSet;
-            // 
-            // rTADataSet
-            // 
-            this.rTADataSet.DataSetName = "RTADataSet";
-            this.rTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // number_of_woundedTextBox
             // 
@@ -463,50 +446,6 @@
             this.cityTextBox.Size = new System.Drawing.Size(100, 20);
             this.cityTextBox.TabIndex = 1;
             // 
-            // rtaTableAdapter1
-            // 
-            this.rtaTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Driver_InsuranceTableAdapter = null;
-            this.tableAdapterManager.DriverTableAdapter = this.driverTableAdapter;
-            this.tableAdapterManager.GIBDD_officerTableAdapter = null;
-            this.tableAdapterManager.Insurance_companyTableAdapter = null;
-            this.tableAdapterManager.InsuranceTableAdapter = this.insuranceTableAdapter;
-            this.tableAdapterManager.RTA_DriverTableAdapter = this.rTA_DriverTableAdapter;
-            this.tableAdapterManager.RTATableAdapter = this.rtaTableAdapter1;
-            this.tableAdapterManager.Tag_mapTableAdapter = null;
-            this.tableAdapterManager.TagTableAdapter = this.tagTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApp7.RTADataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VehicleTableAdapter = this.vehicleTableAdapter;
-            this.tableAdapterManager.WitnessTableAdapter = this.witnessTableAdapter;
-            // 
-            // driverTableAdapter
-            // 
-            this.driverTableAdapter.ClearBeforeFill = true;
-            // 
-            // insuranceTableAdapter
-            // 
-            this.insuranceTableAdapter.ClearBeforeFill = true;
-            // 
-            // rTA_DriverTableAdapter
-            // 
-            this.rTA_DriverTableAdapter.ClearBeforeFill = true;
-            // 
-            // tagTableAdapter
-            // 
-            this.tagTableAdapter.ClearBeforeFill = true;
-            // 
-            // vehicleTableAdapter
-            // 
-            this.vehicleTableAdapter.ClearBeforeFill = true;
-            // 
-            // witnessTableAdapter
-            // 
-            this.witnessTableAdapter.ClearBeforeFill = true;
-            // 
             // rTABindingNavigator
             // 
             this.rTABindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -533,7 +472,7 @@
             this.rTABindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.rTABindingNavigator.Name = "rTABindingNavigator";
             this.rTABindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.rTABindingNavigator.Size = new System.Drawing.Size(872, 25);
+            this.rTABindingNavigator.Size = new System.Drawing.Size(893, 25);
             this.rTABindingNavigator.TabIndex = 1;
             this.rTABindingNavigator.Text = "bindingNavigator1";
             // 
@@ -661,11 +600,6 @@
             this.phone_numberTextBox.Size = new System.Drawing.Size(100, 20);
             this.phone_numberTextBox.TabIndex = 11;
             // 
-            // witnessBindingSource
-            // 
-            this.witnessBindingSource.DataMember = "Witness";
-            this.witnessBindingSource.DataSource = this.rTADataSet;
-            // 
             // addressTextBox
             // 
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.witnessBindingSource, "Address", true));
@@ -727,11 +661,6 @@
             this.driver_licenceTextBox.Size = new System.Drawing.Size(100, 20);
             this.driver_licenceTextBox.TabIndex = 4;
             // 
-            // driversInDUIRtaBindingSource
-            // 
-            this.driversInDUIRtaBindingSource.DataMember = "DriversInDUIRta";
-            this.driversInDUIRtaBindingSource.DataSource = this.rTADataSet;
-            // 
             // the_driver_is_drunkCheckBox
             // 
             this.the_driver_is_drunkCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource, "the_driver_is_drunk", true));
@@ -741,16 +670,6 @@
             this.the_driver_is_drunkCheckBox.TabIndex = 3;
             this.the_driver_is_drunkCheckBox.Text = "Да";
             this.the_driver_is_drunkCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // rTA_DriverBindingSource
-            // 
-            this.rTA_DriverBindingSource.DataMember = "RTA_Driver";
-            this.rTA_DriverBindingSource.DataSource = this.rTADataSet;
-            // 
-            // driverBindingSource
-            // 
-            this.driverBindingSource.DataMember = "Driver";
-            this.driverBindingSource.DataSource = this.rTADataSet;
             // 
             // groupBox4
             // 
@@ -804,28 +723,12 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "ТС А";
             // 
-            // tagBindingSource
-            // 
-            this.tagBindingSource.DataMember = "Tag";
-            this.tagBindingSource.DataSource = this.rTADataSet;
-            // 
             // vehicle_damageTextBox
             // 
-            this.vehicle_damageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Vehicle_damage", true));
             this.vehicle_damageTextBox.Location = new System.Drawing.Point(170, 94);
             this.vehicle_damageTextBox.Name = "vehicle_damageTextBox";
             this.vehicle_damageTextBox.Size = new System.Drawing.Size(100, 20);
             this.vehicle_damageTextBox.TabIndex = 5;
-            // 
-            // rTA_DriverBindingSource1
-            // 
-            this.rTA_DriverBindingSource1.DataMember = "FK_VehicleId_on_RtaDriver";
-            this.rTA_DriverBindingSource1.DataSource = this.vehicleBindingSource;
-            // 
-            // vehicleBindingSource
-            // 
-            this.vehicleBindingSource.DataMember = "Vehicle";
-            this.vehicleBindingSource.DataSource = this.rTADataSet;
             // 
             // insuranceTextBox
             // 
@@ -847,10 +750,6 @@
             this.number_plateTextBox.Name = "number_plateTextBox";
             this.number_plateTextBox.Size = new System.Drawing.Size(100, 20);
             this.number_plateTextBox.TabIndex = 1;
-            // 
-            // driversInDUIRtaTableAdapter
-            // 
-            this.driversInDUIRtaTableAdapter.ClearBeforeFill = true;
             // 
             // nameComboBox
             // 
@@ -887,7 +786,6 @@
             // 
             // is_the_vehicle_insuredCheckBox
             // 
-            this.is_the_vehicle_insuredCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "is_the_vehicle_insured", true));
             this.is_the_vehicle_insuredCheckBox.Location = new System.Drawing.Point(170, 69);
             this.is_the_vehicle_insuredCheckBox.Name = "is_the_vehicle_insuredCheckBox";
             this.is_the_vehicle_insuredCheckBox.Size = new System.Drawing.Size(100, 24);
@@ -905,7 +803,6 @@
             // 
             // damage_to_other_propertyCheckBox
             // 
-            this.damage_to_other_propertyCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "damage_to_other_property", true));
             this.damage_to_other_propertyCheckBox.Location = new System.Drawing.Point(152, 28);
             this.damage_to_other_propertyCheckBox.Name = "damage_to_other_propertyCheckBox";
             this.damage_to_other_propertyCheckBox.Size = new System.Drawing.Size(100, 20);
@@ -924,7 +821,6 @@
             // 
             // damaged_property_nameTextBox
             // 
-            this.damaged_property_nameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Damaged_property_name", true));
             this.damaged_property_nameTextBox.Location = new System.Drawing.Point(152, 53);
             this.damaged_property_nameTextBox.Name = "damaged_property_nameTextBox";
             this.damaged_property_nameTextBox.Size = new System.Drawing.Size(100, 20);
@@ -941,7 +837,6 @@
             // 
             // damaged_property_ownerTextBox
             // 
-            this.damaged_property_ownerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Damaged_property_owner", true));
             this.damaged_property_ownerTextBox.Location = new System.Drawing.Point(152, 78);
             this.damaged_property_ownerTextBox.Name = "damaged_property_ownerTextBox";
             this.damaged_property_ownerTextBox.Size = new System.Drawing.Size(100, 20);
@@ -972,7 +867,6 @@
             // 
             // can_the_vehicle_moveCheckBox
             // 
-            this.can_the_vehicle_moveCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "can_the_vehicle_move", true));
             this.can_the_vehicle_moveCheckBox.Location = new System.Drawing.Point(151, 25);
             this.can_the_vehicle_moveCheckBox.Name = "can_the_vehicle_moveCheckBox";
             this.can_the_vehicle_moveCheckBox.Size = new System.Drawing.Size(104, 24);
@@ -990,7 +884,6 @@
             // 
             // vehicle_parking_addressTextBox
             // 
-            this.vehicle_parking_addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Vehicle_parking_address", true));
             this.vehicle_parking_addressTextBox.Location = new System.Drawing.Point(151, 67);
             this.vehicle_parking_addressTextBox.Name = "vehicle_parking_addressTextBox";
             this.vehicle_parking_addressTextBox.Size = new System.Drawing.Size(100, 20);
@@ -1024,7 +917,7 @@
             this.groupBox6.Controls.Add(this.textBox7);
             this.groupBox6.Location = new System.Drawing.Point(556, 125);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(303, 378);
+            this.groupBox6.Size = new System.Drawing.Size(317, 389);
             this.groupBox6.TabIndex = 16;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "ТС Б";
@@ -1059,7 +952,6 @@
             // 
             // textBox2
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Vehicle_parking_address", true));
             this.textBox2.Location = new System.Drawing.Point(151, 67);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
@@ -1067,7 +959,6 @@
             // 
             // checkBox2
             // 
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "can_the_vehicle_move", true));
             this.checkBox2.Location = new System.Drawing.Point(151, 25);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(104, 24);
@@ -1109,7 +1000,6 @@
             // 
             // checkBox3
             // 
-            this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "damage_to_other_property", true));
             this.checkBox3.Location = new System.Drawing.Point(152, 28);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(100, 20);
@@ -1119,7 +1009,6 @@
             // 
             // textBox3
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Damaged_property_owner", true));
             this.textBox3.Location = new System.Drawing.Point(152, 78);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
@@ -1127,7 +1016,6 @@
             // 
             // textBox4
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Damaged_property_name", true));
             this.textBox4.Location = new System.Drawing.Point(152, 53);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
@@ -1145,6 +1033,7 @@
             // label8
             // 
             label8.AutoSize = true;
+            label8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehicleBindingSource, "Number_plate", true));
             label8.Location = new System.Drawing.Point(15, 74);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(149, 13);
@@ -1171,7 +1060,6 @@
             // 
             // checkBox4
             // 
-            this.checkBox4.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rTA_DriverBindingSource1, "is_the_vehicle_insured", true));
             this.checkBox4.Location = new System.Drawing.Point(170, 69);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(100, 24);
@@ -1181,7 +1069,6 @@
             // 
             // textBox5
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTA_DriverBindingSource1, "Vehicle_damage", true));
             this.textBox5.Location = new System.Drawing.Point(170, 94);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 20);
@@ -1255,11 +1142,116 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // number_of_deadLabel1
+            // 
+            number_of_deadLabel1.AutoSize = true;
+            number_of_deadLabel1.Location = new System.Drawing.Point(24, 177);
+            number_of_deadLabel1.Name = "number_of_deadLabel1";
+            number_of_deadLabel1.Size = new System.Drawing.Size(86, 13);
+            number_of_deadLabel1.TabIndex = 12;
+            number_of_deadLabel1.Text = "Number of dead:";
+            // 
+            // number_of_deadTextBox
+            // 
+            this.number_of_deadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rTABindingSource, "Number_of_dead", true));
+            this.number_of_deadTextBox.Location = new System.Drawing.Point(116, 174);
+            this.number_of_deadTextBox.Name = "number_of_deadTextBox";
+            this.number_of_deadTextBox.Size = new System.Drawing.Size(100, 20);
+            this.number_of_deadTextBox.TabIndex = 13;
+            // 
+            // tagBindingSource
+            // 
+            this.tagBindingSource.DataMember = "Tag";
+            this.tagBindingSource.DataSource = this.rTADataSet;
+            // 
+            // rTADataSet
+            // 
+            this.rTADataSet.DataSetName = "RTADataSet";
+            this.rTADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.rTADataSet;
+            // 
+            // rTA_DriverBindingSource
+            // 
+            this.rTA_DriverBindingSource.DataMember = "RTA_Driver";
+            this.rTA_DriverBindingSource.DataSource = this.rTADataSet;
+            // 
+            // driverBindingSource
+            // 
+            this.driverBindingSource.DataMember = "Driver";
+            this.driverBindingSource.DataSource = this.rTADataSet;
+            // 
+            // driversInDUIRtaBindingSource
+            // 
+            this.driversInDUIRtaBindingSource.DataMember = "DriversInDUIRta";
+            this.driversInDUIRtaBindingSource.DataSource = this.rTADataSet;
+            // 
+            // witnessBindingSource
+            // 
+            this.witnessBindingSource.DataMember = "Witness";
+            this.witnessBindingSource.DataSource = this.rTADataSet;
+            // 
+            // rTABindingSource
+            // 
+            this.rTABindingSource.DataMember = "RTA";
+            this.rTABindingSource.DataSource = this.rTADataSet;
+            // 
+            // rtaTableAdapter1
+            // 
+            this.rtaTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Driver_InsuranceTableAdapter = null;
+            this.tableAdapterManager.DriverTableAdapter = this.driverTableAdapter;
+            this.tableAdapterManager.GIBDD_officerTableAdapter = null;
+            this.tableAdapterManager.Insurance_companyTableAdapter = null;
+            this.tableAdapterManager.InsuranceTableAdapter = this.insuranceTableAdapter;
+            this.tableAdapterManager.RTA_DriverTableAdapter = this.rTA_DriverTableAdapter;
+            this.tableAdapterManager.RTATableAdapter = this.rtaTableAdapter1;
+            this.tableAdapterManager.Tag_mapTableAdapter = null;
+            this.tableAdapterManager.TagTableAdapter = this.tagTableAdapter;
+            this.tableAdapterManager.UpdateOrder = WindowsFormsApp7.RTADataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VehicleTableAdapter = this.vehicleTableAdapter;
+            this.tableAdapterManager.WitnessTableAdapter = this.witnessTableAdapter;
+            // 
+            // driverTableAdapter
+            // 
+            this.driverTableAdapter.ClearBeforeFill = true;
+            // 
+            // insuranceTableAdapter
+            // 
+            this.insuranceTableAdapter.ClearBeforeFill = true;
+            // 
+            // rTA_DriverTableAdapter
+            // 
+            this.rTA_DriverTableAdapter.ClearBeforeFill = true;
+            // 
+            // tagTableAdapter
+            // 
+            this.tagTableAdapter.ClearBeforeFill = true;
+            // 
+            // vehicleTableAdapter
+            // 
+            this.vehicleTableAdapter.ClearBeforeFill = true;
+            // 
+            // witnessTableAdapter
+            // 
+            this.witnessTableAdapter.ClearBeforeFill = true;
+            // 
+            // driversInDUIRtaTableAdapter
+            // 
+            this.driversInDUIRtaTableAdapter.ClearBeforeFill = true;
+            // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(872, 508);
+            this.ClientSize = new System.Drawing.Size(893, 534);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox6);
@@ -1274,26 +1266,17 @@
             this.Load += new System.EventHandler(this.Form10_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rTABindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rTABindingNavigator)).EndInit();
             this.rTABindingNavigator.ResumeLayout(false);
             this.rTABindingNavigator.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.witnessBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driversInDUIRtaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.insuranceBindingSource)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -1305,6 +1288,14 @@
             this.groupBox9.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tagBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTA_DriverBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversInDUIRtaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.witnessBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rTABindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1333,7 +1324,6 @@
         private System.Windows.Forms.TextBox buildingTextBox;
         private System.Windows.Forms.TextBox streetTextBox;
         private System.Windows.Forms.TextBox cityTextBox;
-        private System.Windows.Forms.TextBox number_of_deadTextBox;
         private System.Windows.Forms.TextBox number_of_woundedTextBox;
         private System.Windows.Forms.DateTimePicker date_and_timeDateTimePicker;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1364,7 +1354,6 @@
         private System.Windows.Forms.TextBox number_plateTextBox;
         private System.Windows.Forms.BindingSource insuranceBindingSource;
         private System.Windows.Forms.TextBox vehicle_damageTextBox;
-        private System.Windows.Forms.BindingSource rTA_DriverBindingSource1;
         private System.Windows.Forms.TextBox insuranceTextBox;
         private RTADataSetTableAdapters.TagTableAdapter tagTableAdapter;
         private System.Windows.Forms.BindingSource tagBindingSource;
@@ -1393,5 +1382,6 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox number_of_deadTextBox;
     }
 }
