@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             System.Windows.Forms.Label badge_numberLabel;
             System.Windows.Forms.Label passwordLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.rTADataSet = new WindowsFormsApp7.RTADataSet();
             this.gIBDD_officerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gIBDD_officerTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.GIBDD_officerTableAdapter();
             this.tableAdapterManager = new WindowsFormsApp7.RTADataSetTableAdapters.TableAdapterManager();
-            this.gIBDD_officerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.badge_numberTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.getRtaByCityBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.getRtaByCityTableAdapter = new WindowsFormsApp7.RTADataSetTableAdapters.GetRtaByCityTableAdapter();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -49,16 +54,33 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.gIBDD_officerBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.badge_numberTextBox = new System.Windows.Forms.TextBox();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.gIBDD_officerBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             badge_numberLabel = new System.Windows.Forms.Label();
             passwordLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIBDD_officerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getRtaByCityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIBDD_officerBindingNavigator)).BeginInit();
             this.gIBDD_officerBindingNavigator.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // badge_numberLabel
+            // 
+            badge_numberLabel.AutoSize = true;
+            badge_numberLabel.Location = new System.Drawing.Point(213, 152);
+            badge_numberLabel.Name = "badge_numberLabel";
+            badge_numberLabel.Size = new System.Drawing.Size(134, 13);
+            badge_numberLabel.TabIndex = 1;
+            badge_numberLabel.Text = "Номер нагрудного знака";
+            // 
+            // passwordLabel
+            // 
+            passwordLabel.AutoSize = true;
+            passwordLabel.Location = new System.Drawing.Point(302, 212);
+            passwordLabel.Name = "passwordLabel";
+            passwordLabel.Size = new System.Drawing.Size(45, 13);
+            passwordLabel.TabIndex = 3;
+            passwordLabel.Text = "Пароль";
             // 
             // rTADataSet
             // 
@@ -90,35 +112,48 @@
             this.tableAdapterManager.VehicleTableAdapter = null;
             this.tableAdapterManager.WitnessTableAdapter = null;
             // 
-            // gIBDD_officerBindingNavigator
+            // badge_numberTextBox
             // 
-            this.gIBDD_officerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.gIBDD_officerBindingNavigator.BindingSource = this.gIBDD_officerBindingSource;
-            this.gIBDD_officerBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.gIBDD_officerBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.gIBDD_officerBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.gIBDD_officerBindingNavigatorSaveItem});
-            this.gIBDD_officerBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.gIBDD_officerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.gIBDD_officerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.gIBDD_officerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.gIBDD_officerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.gIBDD_officerBindingNavigator.Name = "gIBDD_officerBindingNavigator";
-            this.gIBDD_officerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.gIBDD_officerBindingNavigator.Size = new System.Drawing.Size(800, 25);
-            this.gIBDD_officerBindingNavigator.TabIndex = 0;
-            this.gIBDD_officerBindingNavigator.Text = "bindingNavigator1";
+            this.badge_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIBDD_officerBindingSource, "Badge_number", true));
+            this.badge_numberTextBox.Location = new System.Drawing.Point(353, 149);
+            this.badge_numberTextBox.Name = "badge_numberTextBox";
+            this.badge_numberTextBox.Size = new System.Drawing.Size(143, 20);
+            this.badge_numberTextBox.TabIndex = 2;
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIBDD_officerBindingSource, "Password", true));
+            this.passwordTextBox.Location = new System.Drawing.Point(353, 209);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(143, 20);
+            this.passwordTextBox.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(323, 300);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Войти";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // getRtaByCityBindingSource
+            // 
+            this.getRtaByCityBindingSource.DataMember = "GetRtaByCity";
+            this.getRtaByCityBindingSource.DataSource = this.rTADataSet;
+            // 
+            // getRtaByCityTableAdapter
+            // 
+            this.getRtaByCityTableAdapter.ClearBeforeFill = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.TabIndex = 6;
+            this.toolStrip1.Text = "fillToolStrip";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -162,7 +197,7 @@
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -185,7 +220,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -215,55 +250,42 @@
             this.gIBDD_officerBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.gIBDD_officerBindingNavigatorSaveItem.Click += new System.EventHandler(this.gIBDD_officerBindingNavigatorSaveItem_Click);
             // 
-            // badge_numberLabel
+            // gIBDD_officerBindingNavigator
             // 
-            badge_numberLabel.AutoSize = true;
-            badge_numberLabel.Location = new System.Drawing.Point(268, 152);
-            badge_numberLabel.Name = "badge_numberLabel";
-            badge_numberLabel.Size = new System.Drawing.Size(79, 13);
-            badge_numberLabel.TabIndex = 1;
-            badge_numberLabel.Text = "Badge number:";
-            // 
-            // badge_numberTextBox
-            // 
-            this.badge_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIBDD_officerBindingSource, "Badge_number", true));
-            this.badge_numberTextBox.Location = new System.Drawing.Point(353, 149);
-            this.badge_numberTextBox.Name = "badge_numberTextBox";
-            this.badge_numberTextBox.Size = new System.Drawing.Size(143, 20);
-            this.badge_numberTextBox.TabIndex = 2;
-            // 
-            // passwordLabel
-            // 
-            passwordLabel.AutoSize = true;
-            passwordLabel.Location = new System.Drawing.Point(291, 212);
-            passwordLabel.Name = "passwordLabel";
-            passwordLabel.Size = new System.Drawing.Size(56, 13);
-            passwordLabel.TabIndex = 3;
-            passwordLabel.Text = "Password:";
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.gIBDD_officerBindingSource, "Password", true));
-            this.passwordTextBox.Location = new System.Drawing.Point(353, 209);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(143, 20);
-            this.passwordTextBox.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(323, 300);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Войти";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.gIBDD_officerBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.gIBDD_officerBindingNavigator.BindingSource = this.gIBDD_officerBindingSource;
+            this.gIBDD_officerBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.gIBDD_officerBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.gIBDD_officerBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.gIBDD_officerBindingNavigatorSaveItem});
+            this.gIBDD_officerBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.gIBDD_officerBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.gIBDD_officerBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.gIBDD_officerBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.gIBDD_officerBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.gIBDD_officerBindingNavigator.Name = "gIBDD_officerBindingNavigator";
+            this.gIBDD_officerBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.gIBDD_officerBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.gIBDD_officerBindingNavigator.TabIndex = 0;
+            this.gIBDD_officerBindingNavigator.Text = "bindingNavigator1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.button1);
             this.Controls.Add(passwordLabel);
             this.Controls.Add(this.passwordTextBox);
@@ -275,6 +297,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.rTADataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIBDD_officerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.getRtaByCityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gIBDD_officerBindingNavigator)).EndInit();
             this.gIBDD_officerBindingNavigator.ResumeLayout(false);
             this.gIBDD_officerBindingNavigator.PerformLayout();
@@ -289,22 +312,25 @@
         private System.Windows.Forms.BindingSource gIBDD_officerBindingSource;
         private RTADataSetTableAdapters.GIBDD_officerTableAdapter gIBDD_officerTableAdapter;
         private RTADataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator gIBDD_officerBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.TextBox badge_numberTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource getRtaByCityBindingSource;
+        private RTADataSetTableAdapters.GetRtaByCityTableAdapter getRtaByCityTableAdapter;
+        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
         private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton gIBDD_officerBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox badge_numberTextBox;
-        private System.Windows.Forms.TextBox passwordTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingNavigator gIBDD_officerBindingNavigator;
     }
 }
 

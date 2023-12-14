@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp7
 {
-    partial class FormForReport
+    partial class ForReport
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +34,21 @@
             // reportViewer1
             // 
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "WindowsFormsApp7.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(3, 3);
+            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(798, 448);
+            this.reportViewer1.Size = new System.Drawing.Size(881, 749);
             this.reportViewer1.TabIndex = 0;
             // 
-            // FormForReport
+            // ForReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1014, 773);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "FormForReport";
-            this.Text = "FormForReport";
-            this.Load += new System.EventHandler(this.FormForReport_Load);
+            this.Name = "ForReport";
+            this.Text = "ForReport";
+            this.Load += new System.EventHandler(this.ForReport_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp7
 {
-    partial class Form2
+    partial class Form11
     {
         /// <summary>
         /// Required designer variable.
@@ -37,103 +37,124 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(93, 63);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.Location = new System.Drawing.Point(70, 75);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(137, 44);
+            this.button1.Size = new System.Drawing.Size(170, 50);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Водители";
+            this.button1.Text = "Свидетели в одном нарушении";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(93, 191);
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button2.Location = new System.Drawing.Point(343, 75);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 44);
+            this.button2.Size = new System.Drawing.Size(170, 50);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Владельцы";
+            this.button2.Text = "ДТП, которое оформлял конкретный сотрудник ГИБДД";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(93, 326);
+            this.button3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button3.Location = new System.Drawing.Point(603, 77);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(137, 44);
+            this.button3.Size = new System.Drawing.Size(170, 48);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Машины";
+            this.button3.Text = "Водители по номеру страховки в алфавитном порядке";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(340, 63);
+            this.button4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button4.Location = new System.Drawing.Point(70, 195);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(137, 44);
+            this.button4.Size = new System.Drawing.Size(170, 50);
             this.button4.TabIndex = 3;
-            this.button4.Text = "ДТП";
+            this.button4.Text = " Кол-во раненых и погибших в определённом типе ДТП";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(581, 63);
+            this.button5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button5.Location = new System.Drawing.Point(343, 195);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(137, 44);
+            this.button5.Size = new System.Drawing.Size(170, 50);
             this.button5.TabIndex = 4;
-            this.button5.Text = "Страховка";
+            this.button5.Text = "Сортировка ДТП по городу";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(581, 191);
+            this.button6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.button6.Location = new System.Drawing.Point(603, 195);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(137, 44);
+            this.button6.Size = new System.Drawing.Size(170, 50);
             this.button6.TabIndex = 5;
-            this.button6.Text = "Свидетели";
+            this.button6.Text = "Кол-во людей в ДТП определенного типа";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(581, 326);
+            this.button7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button7.Location = new System.Drawing.Point(70, 321);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(137, 44);
+            this.button7.Size = new System.Drawing.Size(170, 50);
             this.button7.TabIndex = 6;
-            this.button7.Text = "Сотрудники ГИБДД";
+            this.button7.Text = "Вывод всех водителей ДТП в состоянии алкогольного опьянения";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(340, 177);
+            this.button8.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button8.Location = new System.Drawing.Point(343, 321);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(137, 73);
+            this.button8.Size = new System.Drawing.Size(170, 50);
             this.button8.TabIndex = 7;
-            this.button8.Text = "Оформить ДТП";
+            this.button8.Text = "Кол-во ДТП у одной машины";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(340, 326);
+            this.button9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button9.Location = new System.Drawing.Point(603, 321);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(137, 44);
+            this.button9.Size = new System.Drawing.Size(170, 48);
             this.button9.TabIndex = 8;
-            this.button9.Text = "Опции";
+            this.button9.Text = "Госномера машин и их собственники";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
-            // Form2
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(41, 466);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 10;
+            this.button11.Text = "Назад";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 530);
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
@@ -143,8 +164,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Form2";
-            this.Text = "Главная";
+            this.Name = "Form11";
+            this.Text = "Опции";
+            this.Load += new System.EventHandler(this.Form11_Load);
             this.ResumeLayout(false);
 
         }
@@ -160,5 +182,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button11;
     }
 }

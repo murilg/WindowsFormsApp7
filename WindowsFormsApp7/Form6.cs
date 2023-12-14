@@ -14,6 +14,7 @@ namespace WindowsFormsApp7
     public partial class Form6 : Form
     {
         BindingSource Sbind = new BindingSource();
+        public static int rtaid;
         public Form6()
         {
             InitializeComponent();
@@ -65,7 +66,7 @@ namespace WindowsFormsApp7
             Sbind.DataSource = dt;
             dataGridView1.DataSource = Sbind;
             {
-                dataGridView1.Columns["RTA_id"].HeaderText = "Код ДТП";
+                dataGridView1.Columns["RTA_id"].HeaderText = "Номер извещения о ДТП";
                 dataGridView1.Columns["Make"].HeaderText = "Марка";
                 dataGridView1.Columns["Model"].HeaderText = "Модель";
                 dataGridView1.Columns["Number_plate"].HeaderText = "Госномер";
@@ -247,6 +248,16 @@ namespace WindowsFormsApp7
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var rtaid1 = (string)dataGridView1.CurrentRow.Cells[0].Value;
+            rtaid = int.Parse(rtaid1);
+            Hide();
+            var form = new ForReport();
+            form.ShowDialog();
+            Close();
         }
     }
 }

@@ -14,9 +14,8 @@ namespace WindowsFormsApp7
 {
     public partial class Form10 : Form
     {
-        private static DateTime date;
         private static DateTime time;
-        int[] A = new int[3];
+        int[] A = new int[5];
         public Form10()
         {
             InitializeComponent();
@@ -35,8 +34,6 @@ namespace WindowsFormsApp7
             dateTimePicker1.CustomFormat = "HH:mm";
 
             dateTimePicker1.ShowUpDown = true;
-            //date = date_and_timeDateTimePicker.Value.Date + dateTimePicker1.Value.TimeOfDay;
-            var yy = new DateTime(2023, 12, 07, 18, 22, 55);
 
             // TODO: данная строка кода позволяет загрузить данные в таблицу "rTADataSet.Tag". При необходимости она может быть перемещена или удалена.
             this.tagTableAdapter.Fill(this.rTADataSet.Tag);
@@ -61,28 +58,28 @@ namespace WindowsFormsApp7
         {
             time = new DateTime(date_and_timeDateTimePicker.Value.Year, date_and_timeDateTimePicker.Value.Month, date_and_timeDateTimePicker.Value.Day, dateTimePicker1.Value.Hour, dateTimePicker1.Value.Minute, 0, 0);
         
-            date = date_and_timeDateTimePicker.Value.Date + dateTimePicker1.Value.TimeOfDay;
             bool drunk = false;
             bool property = false;
             bool move = false;
+            bool drunk2 = false;
+            bool property2 = false;
+            bool move2 = false;
             if (the_driver_is_drunkCheckBox.Checked)
                 drunk = true;
             if (damage_to_other_propertyCheckBox.Checked)
                 property = true;
             if (can_the_vehicle_moveCheckBox.Checked)
                 move = true;
-            // byte g = (byte)number_of_woundedTextBox.Text;
-            //var t1 = number_of_woundedTextBox.Text;
-           // var t3 = (byte)t1;
-            //var t2 = Convert.ToInt16(number_of_deadTextBox.Text);
-
-            var date1 = new DateTime(2008, 3, 1, 7, 0, 0);
+            if (checkBox1.Checked)
+                drunk2 = true;
+            if (checkBox3.Checked)
+                property2 = true;
+            if (checkBox2.Checked)
+                move2 = true;
+          
             try
             {
                 da();
-                //this.Validate();
-                //this.rTABindingSource.EndEdit();
-                //this.rtaTableAdapter1.Insert(cityTextBox.Text, streetTextBox.Text, buildingTextBox.Text, date, number_of_woundedTextBox.Text, number_of_deadTextBox.Text, true, Form1.gid);
             }
             catch (System.Exception ex)
             {
@@ -95,9 +92,9 @@ namespace WindowsFormsApp7
                 this.rTA_DriverBindingSource.EndEdit();
                 this.rTA_DriverTableAdapter.Insert(A[0], A[1], A[2], drunk, true, true, vehicle_damageTextBox.Text, property, damaged_property_nameTextBox.Text, damaged_property_ownerTextBox.Text, move, vehicle_parking_addressTextBox.Text);
                 this.rTA_DriverBindingSource.EndEdit();
-                this.rTA_DriverTableAdapter.Insert(A[0], A[1], A[2], drunk, true, true, vehicle_damageTextBox.Text, property, damaged_property_nameTextBox.Text, damaged_property_ownerTextBox.Text, move, vehicle_parking_addressTextBox.Text);
+                this.rTA_DriverTableAdapter.Insert(A[0], A[3], A[4], drunk2, true, true, textBox5.Text, property2, textBox4.Text, textBox3.Text, move2, textBox2.Text);
                 this.witnessBindingSource.EndEdit();
-                this.witnessTableAdapter.Insert(2, surnameTextBox.Text, nameTextBox.Text, patronymicTextBox.Text, date1, addressTextBox.Text, phone_numberTextBox.Text);
+                this.witnessTableAdapter.Insert(A[0], surnameTextBox.Text, nameTextBox.Text, patronymicTextBox.Text, date_of_birthDateTimePicker.Value.Date, addressTextBox.Text, phone_numberTextBox.Text);
                 MessageBox.Show("Update successful");
             }
             catch (System.Exception ex)
@@ -106,9 +103,24 @@ namespace WindowsFormsApp7
             }
         }
 
-        private void rura()
+        //private int truba()
+        //{
+        //    int i;
+        //    switch (comboBox1.SelectedIndex)
+        //    {
+        //        case 0: pole = "Surname"; break;
+        //        case 1: pole = "Name"; break;
+        //        case 2: pole = "Patronymic"; break;
+        //        case 3: pole = "Date_of_birth"; break;
+        //        case 4: pole = "Address"; break;
+        //        case 5: pole = "Phone_number"; break;
+        //        default: pole = "Surname"; break;
+        //    }
+        //    return i;
+        //}
+
+            private void rura()
         {
-            //int rtaid = 0;
             var constr = new SqlConnectionStringBuilder()
             {
                 DataSource = "localhost,1433",
@@ -116,10 +128,10 @@ namespace WindowsFormsApp7
                 IntegratedSecurity = true,
                 TrustServerCertificate = true,
             };
-           // var yy = new DateTime(2023, 12, 07, 18, 22, 55);
+
             using (var con = new SqlConnection(constr.ConnectionString))
             {
-                string cmdstr = "select rta_id, driver_id, vehicle_id from RTA, driver, Vehicle where city = @city and street = @street and building = @b and date_and_time = @date and Number_plate = @plate and Driver_licence = @dl";
+                string cmdstr = "select rta_id, d1.driver_id as notdriver, v1.vehicle_id as notvehicle, d2.Driver_id, v2.Vehicle_id from RTA, driver d1, driver d2, Vehicle v1, Vehicle v2 where city = @city and street = @street and building = @b and date_and_time = @date and v1.Number_plate = @plate1 and v2.Number_plate = @plate2 and d1.Driver_licence = @dl1 and d2.Driver_licence = @dl2";
                 using (var cmd = new SqlCommand(cmdstr, con))
                 {
                     try
@@ -128,8 +140,10 @@ namespace WindowsFormsApp7
                         cmd.Parameters.AddWithValue("@street", streetTextBox.Text);
                         cmd.Parameters.AddWithValue("@b", buildingTextBox.Text);
                         cmd.Parameters.AddWithValue("@date", time);
-                        cmd.Parameters.AddWithValue("@plate", number_plateTextBox.Text);
-                        cmd.Parameters.AddWithValue("@dl", driver_licenceTextBox.Text);
+                        cmd.Parameters.AddWithValue("@plate1", number_plateTextBox.Text);
+                        cmd.Parameters.AddWithValue("@plate2", textBox7.Text);
+                        cmd.Parameters.AddWithValue("@dl1", driver_licenceTextBox.Text);
+                        cmd.Parameters.AddWithValue("@dl2", textBox1.Text);
                         con.Open();
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -140,12 +154,12 @@ namespace WindowsFormsApp7
                                     A[0] = (int)reader.GetValue(0);
                                     A[1] = (int)reader.GetValue(1);
                                     A[2] = (int)reader.GetValue(2);
+                                    A[3] = (int)reader.GetValue(3);
+                                    A[4] = (int)reader.GetValue(4);
                                 }
                             }
                         }
                         MessageBox.Show("Update successful");
-
-
                     }
                     catch (Exception ex)
                     {
@@ -157,7 +171,6 @@ namespace WindowsFormsApp7
 
         private void da()
         {
-            int rtaid = 0;
             var constr = new SqlConnectionStringBuilder()
             {
                 DataSource = "localhost,1433",
@@ -192,6 +205,9 @@ namespace WindowsFormsApp7
             }
         }
 
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
